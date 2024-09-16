@@ -50,6 +50,7 @@ The primary motivation for this project was to present it in the Space Science E
 1. Decide the material of wheel and terrain type for the experiemnt.
 
 2. Enter the observation values in "Step 1: Single Experiment Results"
+    ![Step 1](./public/image.png)
 
 3. Then pick anyone parameter out of the three result. i.e. 
     - Acceleration
@@ -58,11 +59,18 @@ The primary motivation for this project was to present it in the Space Science E
 
     Most preferrable is Revolutions.
 
+
 4. Then enter your choosen result parament into the "Step 2: Number of Experiments" Form and repeat steps 2 and 3 as many times you prefer. After that click "submit experiment" button. This wil give you "Average Value".
+    ![Step 2](./public/image-1.png)
 
 5. Enter this "Average Value" into the "Step 3: Form for table input" under it respective material and terrain type.
 
+    ![Step 3](./public/image-2.png)
+
 6. Now you will see the value in the "Step 4: Average Values Table" as well as in the "Step 5: Chart".
+    ![Step 4](./public/image-3.png)
+
+    ![Step 5](./public/image-4.png)
 
 ## Conclusion
 Using this experiment anyone can findout which wheel material performs better on which type of terrain. 
