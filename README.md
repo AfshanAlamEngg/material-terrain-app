@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Material Terrain App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This Project is a web application designed to provide users with an easy experimental setup to do a comparative analysis of different wheel material of rover on various terrains. The project leverages the power of React to create a dynamic and responsive user interface.
 
-## Available Scripts
+## Reason Behind the Project
+The primary motivation for this project was to present it in the Space Science Exhibition held on 17 August 2024, in the Department of Physics, AMU.
 
-In the project directory, you can run:
+## Team Members
+- Mr. Afshan Alam   - [LinkedIn](https://www.linkedin.com/in/afshan-alam/)  
+- Mr. Mujtaba Abbas - [LinkedIn](https://www.linkedin.com/in/mujtaba-abbas-8a1a44217/)
+- Ms. Aasia Ali     - [LinkedIn](https://www.linkedin.com/in/aasia-ali-72a661243/)
 
-### `npm start`
+## Features
+- **Responsive Design**: Adapts to various screen sizes.
+- **Component-Based Architecture**: Easy to maintain and extend.
+- **State Management**: Efficient handling of application state using React hooks.
+- **API Integration**: Fetches data from external APIs to display dynamic content.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup and Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+- Node.js (v20 or higher)
+- npm or yarn
 
-### `npm test`
+### Installation Steps
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/AfshanAlamEngg/material-terrain-app
+    cd material-terrain-app
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-### `npm run build`
+3. **Start the development server:**
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Open your browser and navigate to:**
+    ```
+    http://localhost:3000
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Decide the material of wheel and terrain type for the experiemnt.
 
-### `npm run eject`
+2. Enter the observation values in "Step 1: Single Experiment Results"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Then pick anyone parameter out of the three result. i.e. 
+    - Acceleration
+    - Distance
+    - Revolutions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Most preferrable is Revolutions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Then enter your choosen result parament into the "Step 2: Number of Experiments" Form and repeat steps 2 and 3 as many times you prefer. After that click "submit experiment" button. This wil give you "Average Value".
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Enter this "Average Value" into the "Step 3: Form for table input" under it respective material and terrain type.
 
-## Learn More
+6. Now you will see the value in the "Step 4: Average Values Table" as well as in the "Step 5: Chart".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Conclusion
+Using this experiment anyone can findout which wheel material performs better on which type of terrain. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-### Code Splitting
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgements
+- React documentation
+- Open-source libraries and tools used in this project
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

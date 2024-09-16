@@ -199,8 +199,95 @@ const HomePage = () => {
     return (
         <Container>
             <h1>Material and Terrain Types</h1>
+
+            {/* 1. Single Experiment Results */}
+            <Card>
+                <CardContent>
+                    <h2>Step 1: Single Experiment Results</h2>
+                    <Grid container spacing={2}>
+                        {/* Calculation Inputs */}
+                        <Grid item xs={12}>
+                            <TextField
+                                name="theta"
+                                label="Theta"
+                                value={calculationValues.theta}
+                                onChange={handleCalculationInputChange}
+                                fullWidth
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                name="time"
+                                label="Time"
+                                value={calculationValues.time}
+                                onChange={handleCalculationInputChange}
+                                fullWidth
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                name="radius"
+                                label="Radius"
+                                value={calculationValues.radius}
+                                onChange={handleCalculationInputChange}
+                                fullWidth
+                            />
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <Button onClick={handleCalculate} variant="contained" color="primary">Calculate</Button>
+                            <Button onClick={resetCalculations} variant="outlined" color="secondary" sx={{ marginLeft: 2 }}>Reset Calculations</Button>
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <Typography>Acceleration: {results.acceleration.toFixed(2)}</Typography>
+                            <Typography>Distance: {results.distance.toFixed(2)}</Typography>
+                            <Typography>Revolutions: {results.revolutions.toFixed(2)}</Typography>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
+
+            {/* Step 2: Number of Experiments */}
+            <Card sx={{ marginTop: 4 }}>
+                <CardContent>
+                    <h2>Step 2: Number of Experiments</h2>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <TextField
+                                name="numberOfExperiments"
+                                label="Number of Experiments"
+                                value={experimentData.numberOfExperiments}
+                                onChange={handleExperimentChange}
+                                fullWidth
+                            />
+                        </Grid>
+                        {experimentData.experimentValues.map((value, index) => (
+                            <Grid item xs={12} key={index}>
+                                <TextField
+                                    name={`experiment-${index}`}
+                                    label={`Experiment ${index + 1}`}
+                                    value={value}
+                                    onChange={handleExperimentChange}
+                                    fullWidth
+                                />
+                            </Grid>
+                        ))}
+                        <Grid item xs={12}>
+                            <Button onClick={handleExperimentSubmit} variant="contained" color="primary">Submit Experiments</Button>
+                            <Button onClick={resetExperiment} variant="outlined" color="secondary" sx={{ marginLeft: 2 }}>Reset Experiment</Button>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Typography>Average Value: {experimentData.average.toFixed(2)}</Typography>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
+
+            {/* 3. Form for table input */}
             <Card sx={{ marginBottom: 4 }}>
                 <CardContent>
+                <h2>Step 3: Form for table input</h2>
                     <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                             {/* Input Fields */}
@@ -288,91 +375,10 @@ const HomePage = () => {
                 </CardContent>
             </Card>
 
-            <Card>
-                <CardContent>
-                    <h2>Results</h2>
-                    <Grid container spacing={2}>
-                        {/* Calculation Inputs */}
-                        <Grid item xs={12}>
-                            <TextField
-                                name="theta"
-                                label="Theta"
-                                value={calculationValues.theta}
-                                onChange={handleCalculationInputChange}
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                name="time"
-                                label="Time"
-                                value={calculationValues.time}
-                                onChange={handleCalculationInputChange}
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                name="radius"
-                                label="Radius"
-                                value={calculationValues.radius}
-                                onChange={handleCalculationInputChange}
-                                fullWidth
-                            />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <Button onClick={handleCalculate} variant="contained" color="primary">Calculate</Button>
-                            <Button onClick={resetCalculations} variant="outlined" color="secondary" sx={{ marginLeft: 2 }}>Reset Calculations</Button>
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <Typography>Acceleration: {results.acceleration.toFixed(2)}</Typography>
-                            <Typography>Distance: {results.distance.toFixed(2)}</Typography>
-                            <Typography>Revolutions: {results.revolutions.toFixed(2)}</Typography>
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Card>
-
+            {/* 4. Average Values Table */}
             <Card sx={{ marginTop: 4 }}>
                 <CardContent>
-                    <h2>Experiment Data</h2>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <TextField
-                                name="numberOfExperiments"
-                                label="Number of Experiments"
-                                value={experimentData.numberOfExperiments}
-                                onChange={handleExperimentChange}
-                                fullWidth
-                            />
-                        </Grid>
-                        {experimentData.experimentValues.map((value, index) => (
-                            <Grid item xs={12} key={index}>
-                                <TextField
-                                    name={`experiment-${index}`}
-                                    label={`Experiment ${index + 1}`}
-                                    value={value}
-                                    onChange={handleExperimentChange}
-                                    fullWidth
-                                />
-                            </Grid>
-                        ))}
-                        <Grid item xs={12}>
-                            <Button onClick={handleExperimentSubmit} variant="contained" color="primary">Submit Experiments</Button>
-                            <Button onClick={resetExperiment} variant="outlined" color="secondary" sx={{ marginLeft: 2 }}>Reset Experiment</Button>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Typography>Average Value: {experimentData.average.toFixed(2)}</Typography>
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Card>
-
-            <Card sx={{ marginTop: 4 }}>
-                <CardContent>
-                    <h2>Average Values Table</h2>
+                    <h2>Step 4: Average Values Table</h2>
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
@@ -398,9 +404,10 @@ const HomePage = () => {
                 </CardContent>
             </Card>
 
+            {/* 5. Comaparision chart */}
             <Card sx={{ marginTop: 4 }}>
                 <CardContent>
-                    <h2>Chart</h2>
+                    <h2>Step 5: Chart</h2>
                     <Line data={chartData} />
                 </CardContent>
             </Card>
